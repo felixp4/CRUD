@@ -1,40 +1,43 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: felix
- * Date: 29.04.17
- * Time: 15:57
- */
 
-echo "Hello world";
+require_once 'model/model.php';
+
+// echo "Hello world";
 
 ?>
 
-<form method="post" action="index.php">
-    <input type="text" placeholder="name" name="name">
-    <br>
-    <input type="text" placeholder="description" name="description">
-    <br>
-    <input type="text" placeholder="created_at" name="created_at">
-    <br>
-    <input type="submit">
-</form>
+<table border="1">
+     <?php
+        // $pdo_conn = new PDO("mysql:host=127.0.0.1;dbname=CRUD", 'root', 'phpschool17');
+        // $sql = 'SELECT * FROM article';
+        // $pdo_statement = $pdo_conn->prepare($sql);
+        // $pdo_statement->execute();
+        // $result = $pdo_statement->fetchAll();
+
+        // echo "<tr><td>".$result[0][1]."</td> <td>".$result[0][2]."</td> <td>".$result[0][3]."</td></tr>";
+        // echo "<tr><td>".$result[1][1]."</td> <td>".$result[1][2]."</td> <td>".$result[1][3]."</td></tr>";
+        // echo "<tr><td>".$result[2][1]."</td> <td>".$result[2][2]."</td> <td>".$result[2][3]."</td></tr>";
+
+       // print_r($result);
+       // var_dump($result);
+
+       // var_dump($statement->execute());
+       // var_dump($statement->errorInfo());
+     ?>
+
+ </table>
 
 <?php
 
-if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['created_at'])) {
+if( isset($_POST['name']) &&
+    isset($_POST['description']) &&
+    isset($_POST['created_at'])) {
 
-    $pdo_conn = new PDO("mysql:host=127.0.0.1;dbname=CRUD", 'root', 'phpschool17');
-
-    // var_dump($pdo_conn::getAvailableDrivers());
-
-
-    $sql = 'INSERT INTO article (name, description, created_at) VALUES (:name, :description, :created_at)';
-    $statement = $pdo_conn->prepare($sql);
-    $statement->bindValue(':name', $_POST['name'] );
-    $statement->bindValue(':description', $_POST['description']);
-    $statement->bindValue(':created_at', $_POST['created_at']);
-
-    var_dump($statement->execute());
-    var_dump($statement->errorInfo());
+    $result = insert(   $_POST['name'],
+                        $_POST['description'],
+                        $_POST['created_at']);
+    var_dump($result);
 }
+
+require_once 'view/indexTemplate.php';
+
