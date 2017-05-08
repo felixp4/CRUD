@@ -2,7 +2,7 @@
 
 require_once 'model/model.php';
 
-$rows = findAll();
+$rows = $article->findAll();
 
 require_once 'view/indexTemplate.php';
 

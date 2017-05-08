@@ -6,10 +6,12 @@ if( isset($_POST['name']) &&
     isset($_POST['description']) &&
     isset($_POST['created_at'])) {
 
-    $result = insert(   $_POST['name'],
+    $result = $article->insert(
+        $_POST['name'],
         $_POST['description'],
         $_POST['created_at']);
-    var_dump($result);
+
+    header('Location: index.php');
 }
 
-require_once 'view/indexTemplate.php';
+require_once 'view/createTemplate.php';

@@ -7,17 +7,17 @@ if( isset($_POST['id']) &&
     isset($_POST['description']) &&
     isset($_POST['created_at'])) {
 
-    $result = update(
+    $result = $article->update(
         $_POST['id'],
         $_POST['name'],
         $_POST['description'],
         $_POST['created_at']);
 
-
-     var_dump($result);
+    header('Location: index.php');
 }
 
 $id = $_GET['id'];
-$row = findById($id);
+
+$row = $article->findById($id);
 
 require_once 'view/editTemplate.php';
