@@ -7,6 +7,7 @@ if( isset($_POST['id']) &&
     isset($_POST['description']) &&
     isset($_POST['created_at'])) {
 
+    $article = new Article();
     $result = $article->update(
         $_POST['id'],
         $_POST['name'],
@@ -18,6 +19,7 @@ if( isset($_POST['id']) &&
 
 $id = $_GET['id'];
 
+$article = new Article();
 $row = $article->findById($id);
 
 require_once 'view/editTemplate.php';
