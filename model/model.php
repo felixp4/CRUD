@@ -7,7 +7,8 @@ class Article
     public $passwd = 'phpschool17';
     public $pdo_conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->getConnection();
     }
 
