@@ -1,4 +1,5 @@
 <?php
+
 class Article
 {
     public $dsn = 'mysql:host=127.0.0.1;dbname=CRUD';
@@ -6,7 +7,7 @@ class Article
     public $passwd = 'phpschool17';
     public $pdo_conn;
 
-    function __construct() {
+    public function __construct() {
         $this->getConnection();
     }
 
