@@ -2,11 +2,10 @@
 
 require_once 'model/model.php';
 
-if( isset($_POST['id']) &&
+if (isset($_POST['id']) &&
     isset($_POST['name']) &&
     isset($_POST['description']) &&
     isset($_POST['created_at'])) {
-
     $article = new Article();
     $result = $article->update(
         $_POST['id'],

@@ -6,10 +6,3 @@ $article = new Article();
 $rows = $article->findAll();
 
 require_once 'view/indexTemplate.php';
-
-
-
-
-
-
-

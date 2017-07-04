@@ -6,4 +6,3 @@ foreach ($rows as $el) {
 }
 
 echo '<br><br><a href="create.php ">Create</a><br>';
-

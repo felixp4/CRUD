@@ -77,5 +77,4 @@ class Article
 
         return $result;
     }
-
 }
