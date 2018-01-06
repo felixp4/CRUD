@@ -1,0 +1,8 @@
+USE CRUD;
+
+CREATE TABLE article (
+  id      INT AUTO_INCREMENT PRIMARY KEY,
+  name    VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  created_at DATETIME NOT NULL
+);

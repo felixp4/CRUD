@@ -2,9 +2,9 @@
 
 class Article
 {
-    public $dsn = 'mysql:host=127.0.0.1;dbname=CRUD';
+    public $dsn = 'mysql:host=172.17.0.2;dbname=CRUD';
     public $username = 'root';
-    public $passwd = 'phpschool17';
+    public $passwd = '1111';
     public $pdo_conn;
 
     public function __construct()
